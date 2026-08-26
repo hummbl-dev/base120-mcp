@@ -1,59 +1,71 @@
-<svg width="860" height="200" viewBox="0 0 860 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="860" height="200" rx="12" fill="#0D1117" stroke="#30363D"/>
+<svg width="860" height="210" viewBox="0 0 860 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="860" height="210" rx="12" fill="#0D1117" stroke="#30363D"/>
   
-  <text x="30" y="35" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Base120 Cognitive Domains Architecture</text>
+  <text x="30" y="32" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Base120 Canonical 6 Transformations Architecture (120 Mental Models)</text>
 
-  <!-- 1. Perspective -->
-  <g transform="translate(30, 60)">
-    <rect width="125" height="110" rx="8" fill="#1E1B4B" stroke="#818CF8"/>
-    <text x="12" y="28" fill="#818CF8" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">1. Perspective</text>
-    <text x="12" y="50" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• Inversion</text>
+  <!-- 1. P: Perspective (P1-P20) -->
+  <g transform="translate(25, 52)">
+    <rect width="130" height="135" rx="8" fill="#1E1B4B" stroke="#818CF8" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#818CF8" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">P: Perspective</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (P1-P20)</text>
     <text x="12" y="68" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• First Principles</text>
-    <text x="12" y="86" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• Occam's Razor</text>
+    <text x="12" y="86" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• Stakeholder Map</text>
+    <text x="12" y="104" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• Identity Stack</text>
+    <text x="12" y="122" fill="#C7D2FE" font-family="-apple-system, sans-serif" font-size="10">• Lens Shifting</text>
   </g>
 
-  <!-- 2. Composition -->
-  <g transform="translate(165, 60)">
-    <rect width="125" height="110" rx="8" fill="#064E3B" stroke="#34D399"/>
-    <text x="12" y="28" fill="#34D399" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">2. Composition</text>
-    <text x="12" y="50" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Synergy</text>
-    <text x="12" y="68" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Antifragility</text>
-    <text x="12" y="86" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Network Effects</text>
+  <!-- 2. IN: Inversion (IN1-IN20) -->
+  <g transform="translate(162, 52)">
+    <rect width="130" height="135" rx="8" fill="#7F1D1D" stroke="#F87171" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#F87171" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">IN: Inversion</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (IN1-IN20)</text>
+    <text x="12" y="68" fill="#FECACA" font-family="-apple-system, sans-serif" font-size="10">• Subtractive Think</text>
+    <text x="12" y="86" fill="#FECACA" font-family="-apple-system, sans-serif" font-size="10">• Premortem Analysis</text>
+    <text x="12" y="104" fill="#FECACA" font-family="-apple-system, sans-serif" font-size="10">• Problem Reversal</text>
+    <text x="12" y="122" fill="#FECACA" font-family="-apple-system, sans-serif" font-size="10">• Red Teaming</text>
   </g>
 
-  <!-- 3. Decomposition -->
-  <g transform="translate(300, 60)">
-    <rect width="125" height="110" rx="8" fill="#701A75" stroke="#E879F9"/>
-    <text x="12" y="28" fill="#E879F9" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">3. Decompose</text>
-    <text x="12" y="50" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• MECE</text>
-    <text x="12" y="68" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• 80/20 Pareto</text>
-    <text x="12" y="86" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• Root Cause (5W)</text>
+  <!-- 3. CO: Composition (CO1-CO20) -->
+  <g transform="translate(299, 52)">
+    <rect width="130" height="135" rx="8" fill="#064E3B" stroke="#34D399" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#34D399" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">CO: Composition</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (CO1-CO20)</text>
+    <text x="12" y="68" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Synergy Principle</text>
+    <text x="12" y="86" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Chunking</text>
+    <text x="12" y="104" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Emergence</text>
+    <text x="12" y="122" fill="#A7F3D0" font-family="-apple-system, sans-serif" font-size="10">• Network Effects</text>
   </g>
 
-  <!-- 4. Recursion -->
-  <g transform="translate(435, 60)">
-    <rect width="125" height="110" rx="8" fill="#14532D" stroke="#4ADE80"/>
-    <text x="12" y="28" fill="#4ADE80" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">4. Recursion</text>
-    <text x="12" y="50" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Compounding</text>
-    <text x="12" y="68" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Feedback Loops</text>
-    <text x="12" y="86" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Flywheels</text>
+  <!-- 4. DE: Decomposition (DE1-DE20) -->
+  <g transform="translate(436, 52)">
+    <rect width="130" height="135" rx="8" fill="#701A75" stroke="#E879F9" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#E879F9" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">DE: Decompose</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (DE1-DE20)</text>
+    <text x="12" y="68" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• 5-Whys Root Cause</text>
+    <text x="12" y="86" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• Factorization</text>
+    <text x="12" y="104" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• 80/20 Pareto</text>
+    <text x="12" y="122" fill="#F5D0FE" font-family="-apple-system, sans-serif" font-size="10">• Partition-Conquer</text>
   </g>
 
-  <!-- 5. Systems -->
-  <g transform="translate(570, 60)">
-    <rect width="125" height="110" rx="8" fill="#0C4A6E" stroke="#38BDF8"/>
-    <text x="12" y="28" fill="#38BDF8" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">5. Systems</text>
-    <text x="12" y="50" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Ashby's Law</text>
-    <text x="12" y="68" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Bottlenecks</text>
-    <text x="12" y="86" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Le Chatelier</text>
+  <!-- 5. RE: Recursion (RE1-RE20) -->
+  <g transform="translate(573, 52)">
+    <rect width="130" height="135" rx="8" fill="#14532D" stroke="#4ADE80" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#4ADE80" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">RE: Recursion</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (RE1-RE20)</text>
+    <text x="12" y="68" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Kaizen Cycles</text>
+    <text x="12" y="86" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Feedback Loops</text>
+    <text x="12" y="104" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Meta-Learning</text>
+    <text x="12" y="122" fill="#BBF7D0" font-family="-apple-system, sans-serif" font-size="10">• Guardrails Learn</text>
   </g>
 
-  <!-- 6. Games -->
-  <g transform="translate(705, 60)">
-    <rect width="125" height="110" rx="8" fill="#78350F" stroke="#FBBF24"/>
-    <text x="12" y="28" fill="#FBBF24" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">6. Games</text>
-    <text x="12" y="50" fill="#FEF08A" font-family="-apple-system, sans-serif" font-size="10">• Nash Equilibrium</text>
-    <text x="12" y="68" fill="#FEF08A" font-family="-apple-system, sans-serif" font-size="10">• Principal-Agent</text>
-    <text x="12" y="86" fill="#FEF08A" font-family="-apple-system, sans-serif" font-size="10">• Signaling</text>
+  <!-- 6. SY: Systems (SY1-SY20) -->
+  <g transform="translate(710, 52)">
+    <rect width="125" height="135" rx="8" fill="#0C4A6E" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="12" y="24" fill="#38BDF8" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">SY: Systems</text>
+    <text x="12" y="44" fill="#9CA3AF" font-family="monospace" font-size="10">20 Models (SY1-SY20)</text>
+    <text x="12" y="68" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Leverage Points</text>
+    <text x="12" y="86" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• System Bounds</text>
+    <text x="12" y="104" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Stocks &amp; Flows</text>
+    <text x="12" y="122" fill="#BAE6FD" font-family="-apple-system, sans-serif" font-size="10">• Ashby's Variety</text>
   </g>
 </svg>

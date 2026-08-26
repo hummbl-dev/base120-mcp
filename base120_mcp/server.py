@@ -1,4 +1,4 @@
-"""Model Context Protocol (MCP) Server exposing Base120 Mental Models."""
+"""Model Context Protocol (MCP) Server exposing 120 Canonical Base120 Mental Models."""
 
 from __future__ import annotations
 
@@ -42,23 +42,23 @@ class Base120MCPServer:
                     "tools": [
                         {
                             "name": "base120_search",
-                            "description": "Search Base120 mental models by keyword or domain (Perspective, Composition, Decomposition, Recursion, Systems, Games).",
+                            "description": "Search Base120 mental models by keyword or transformation (Perspective, Inversion, Composition, Decomposition, Recursion, Systems).",
                             "inputSchema": {
                                 "type": "object",
                                 "properties": {
-                                    "query": {"type": "string", "description": "Search term or concept (e.g. 'inversion', 'bottleneck', 'systems')"},
+                                    "query": {"type": "string", "description": "Search term or concept (e.g. 'premortem', 'first principles', 'inversion', 'variety')"},
                                 },
                                 "required": ["query"],
                             },
                         },
                         {
                             "name": "base120_apply",
-                            "description": "Get structured reasoning guidance for applying a specific mental model to a problem.",
+                            "description": "Get structured reasoning guidance for applying a specific mental model to an engineering or strategic problem.",
                             "inputSchema": {
                                 "type": "object",
                                 "properties": {
-                                    "model_id": {"type": "string", "description": "Model ID (e.g. 'IN1', 'IN2', 'SY1', 'GA2')"},
-                                    "problem_statement": {"type": "string", "description": "The specific engineering or strategic problem to analyze"},
+                                    "model_id": {"type": "string", "description": "Model ID (e.g. 'P1', 'IN2', 'CO1', 'DE1', 'RE1', 'SY4')"},
+                                    "problem_statement": {"type": "string", "description": "The specific engineering or architectural challenge to evaluate"},
                                 },
                                 "required": ["model_id", "problem_statement"],
                             },
@@ -75,8 +75,14 @@ class Base120MCPServer:
                 q = args.get("query", "").lower()
                 matches = []
                 for m in MODELS.values():
-                    if q in m.id.lower() or q in m.name.lower() or q in m.domain.lower() or q in m.summary.lower():
-                        matches.append({"id": m.id, "name": m.name, "domain": m.domain, "summary": m.summary})
+                    if q in m.id.lower() or q in m.name.lower() or q in m.transformation.lower() or q in m.domain.lower() or q in m.definition.lower():
+                        matches.append({
+                            "id": m.id,
+                            "name": m.name,
+                            "transformation": m.transformation,
+                            "domain": m.domain,
+                            "definition": m.definition
+                        })
                 return {
                     "jsonrpc": "2.0",
                     "id": req_id,
@@ -93,7 +99,7 @@ class Base120MCPServer:
                         "result": {"content": [{"type": "text", "text": f"Unknown model ID: {m_id}. Try searching with base120_search."}], "isError": True},
                     }
                 m = MODELS[m_id]
-                guidance = f"### Applying Base120 Model: [{m.id}] {m.name} ({m.domain})\n\n**Core Thesis**: {m.summary}\n\n**Problem Analyzed**: {problem}\n\n**Reasoning Framework**:\n{m.prompt_guidance}"
+                guidance = f"### Base120 Model: [{m.id}] {m.name} ({m.domain} / {m.transformation})\n\n**Definition**: {m.definition}\n\n**Problem Evaluated**: {problem}\n\n**Reasoning Application**:\n{m.prompt_guidance}"
                 return {
                     "jsonrpc": "2.0",
                     "id": req_id,
