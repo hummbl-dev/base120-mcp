@@ -63,6 +63,37 @@ class Base120MCPServer:
                                 "required": ["model_id", "problem_statement"],
                             },
                         },
+                        {
+                            "name": "base120_chain",
+                            "description": "Compose 2-3 Base120 mental models into a structured, step-by-step reasoning chain for a complex problem.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "model_ids": {
+                                        "type": "array",
+                                        "items": {"type": "string"},
+                                        "description": "Array of 2-3 model IDs (e.g. ['IN2', 'P1', 'SY4'])",
+                                    },
+                                    "problem_statement": {"type": "string", "description": "The complex problem to analyze across the model chain"},
+                                },
+                                "required": ["model_ids", "problem_statement"],
+                            },
+                        },
+                        {
+                            "name": "base120_list",
+                            "description": "List all mental models within a specific transformation family (P, IN, CO, DE, RE, SY).",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "transformation": {
+                                        "type": "string",
+                                        "enum": ["P", "IN", "CO", "DE", "RE", "SY", "ALL"],
+                                        "description": "Transformation family code (P, IN, CO, DE, RE, SY, or ALL)",
+                                    }
+                                },
+                                "required": ["transformation"],
+                            },
+                        },
                     ]
                 },
             }
@@ -81,7 +112,7 @@ class Base120MCPServer:
                             "name": m.name,
                             "transformation": m.transformation,
                             "domain": m.domain,
-                            "definition": m.definition
+                            "definition": m.definition,
                         })
                 return {
                     "jsonrpc": "2.0",
@@ -104,6 +135,42 @@ class Base120MCPServer:
                     "jsonrpc": "2.0",
                     "id": req_id,
                     "result": {"content": [{"type": "text", "text": guidance}], "isError": False},
+                }
+
+            if name == "base120_chain":
+                m_ids = args.get("model_ids", [])
+                problem = args.get("problem_statement", "")
+                valid_models = [MODELS[m.upper()] for m in m_ids if m.upper() in MODELS]
+                if not valid_models:
+                    return {
+                        "jsonrpc": "2.0",
+                        "id": req_id,
+                        "result": {"content": [{"type": "text", "text": "No valid model IDs provided for chaining."}], "isError": True},
+                    }
+
+                chain_text = f"### Base120 Composite Reasoning Chain\n\n**Problem Statement**: {problem}\n\n**Active Models**:\n"
+                for i, vm in enumerate(valid_models, 1):
+                    chain_text += f"{i}. [{vm.id}] {vm.name} ({vm.domain}): {vm.definition}\n"
+                chain_text += "\n**Step-by-Step Chain Execution**:\n"
+                for i, vm in enumerate(valid_models, 1):
+                    chain_text += f"- **Step {i} ({vm.name})**: {vm.prompt_guidance}\n"
+
+                return {
+                    "jsonrpc": "2.0",
+                    "id": req_id,
+                    "result": {"content": [{"type": "text", "text": chain_text}], "isError": False},
+                }
+
+            if name == "base120_list":
+                tf = args.get("transformation", "ALL").upper()
+                if tf == "ALL":
+                    res = [{"id": m.id, "name": m.name, "transformation": m.transformation, "domain": m.domain} for m in MODELS.values()]
+                else:
+                    res = [{"id": m.id, "name": m.name, "transformation": m.transformation, "domain": m.domain} for m in MODELS.values() if m.transformation == tf]
+                return {
+                    "jsonrpc": "2.0",
+                    "id": req_id,
+                    "result": {"content": [{"type": "text", "text": json.dumps(res, indent=2)}], "isError": False},
                 }
 
         return {"jsonrpc": "2.0", "id": req_id, "error": {"code": -32601, "message": "Method not found"}}
