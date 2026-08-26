@@ -113,11 +113,21 @@ def repl() -> None:
             elif cmd == "list":
                 cmd_list(arg or None)
             elif cmd == "chain":
-                chain_parts = arg.split(maxsplit=2)
-                if len(chain_parts) >= 3:
-                    cmd_chain([chain_parts[0], chain_parts[1]], chain_parts[2])
+                # ponytail: leading tokens that are valid model IDs are models;
+                # the first non-model token starts the problem statement. Ceiling:
+                # a problem that begins with a valid model ID (e.g. "P3 is key")
+                # will swallow that ID as a model — user rephrases.
+                tokens = arg.split()
+                valid_ids = []
+                i = 0
+                while i < len(tokens) and tokens[i].upper() in MODELS:
+                    valid_ids.append(tokens[i])
+                    i += 1
+                problem = " ".join(tokens[i:])
+                if valid_ids and problem:
+                    cmd_chain(valid_ids, problem)
                 else:
-                    print("Usage: chain <model1> <model2> <problem_statement>")
+                    print("Usage: chain <model1> <model2> ... <problem_statement>")
             else:
                 # Default search if bare word
                 cmd_search(line)

@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "120 Validated Mental Models for Claude, Cursor, and LLMs via Model Context Protocol (MCP)"
 readme = "README.md"
 license = "Apache-2.0 OR MIT"
+license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
 authors = [{ name = "Reuben Bowlby", email = "reuben@hummbl.io" }]
 requires-python = ">=3.10"
 dependencies = []

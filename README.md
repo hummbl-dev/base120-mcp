@@ -5,7 +5,7 @@
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue?style=for-the-badge)](https://github.com/hummbl-dev/base120-mcp)
 [![Runtime Dependencies](https://img.shields.io/badge/Runtime%20Dependencies-Zero%20(stdlib%20only)-brightgreen?style=for-the-badge)](https://github.com/hummbl-dev/base120-mcp)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP%202024--11--05-purple?style=for-the-badge)](https://modelcontextprotocol.io)
-[![License](https://img.shields.io/badge/License-Apache%202.0%20%7C%20MIT-blue?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0%20%7C%20MIT-blue?style=for-the-badge)](LICENSE-APACHE)
 
 <br/>
 
@@ -75,5 +75,5 @@ Base120 is the cognitive reasoning core of the **HUMMBL** platform. For enterpri
 ---
 
 <div align="center">
-  <sub>Dual-licensed under Apache 2.0 and MIT.</sub>
+  <sub>Dual-licensed under [Apache 2.0](LICENSE-APACHE) and [MIT](LICENSE-MIT).</sub>
 </div>
