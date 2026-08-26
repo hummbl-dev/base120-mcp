@@ -31,7 +31,9 @@ class Base120MCPServer:
                 },
             }
 
-        if method == "notifications/initialized" or method == "ping":
+        if method == "notifications/initialized":
+            return {}  # JSON-RPC notifications have no id and get no response
+        if method == "ping":
             return {"jsonrpc": "2.0", "id": req_id, "result": {}}
 
         if method == "tools/list":
@@ -187,4 +189,6 @@ class Base120MCPServer:
                     sys.stdout.write(json.dumps(resp) + "\n")
                     sys.stdout.flush()
             except json.JSONDecodeError:
-                pass
+                err = {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "Parse error"}}
+                sys.stdout.write(json.dumps(err) + "\n")
+                sys.stdout.flush()

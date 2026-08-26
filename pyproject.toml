@@ -12,6 +12,17 @@ license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
 authors = [{ name = "Reuben Bowlby", email = "reuben@hummbl.io" }]
 requires-python = ">=3.10"
 dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
 
 [project.scripts]
 base120 = "base120_mcp.cli:main"
@@ -21,6 +32,10 @@ where = ["."]
 include = ["base120_mcp*"]
 exclude = ["assets*", "tests*", "examples*"]
 
+[project.urls]
+Homepage = "https://github.com/hummbl-dev/base120-mcp"
+Repository = "https://github.com/hummbl-dev/base120-mcp"
+Issues = "https://github.com/hummbl-dev/base120-mcp/issues"
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
 
