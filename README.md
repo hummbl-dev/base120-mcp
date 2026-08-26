@@ -7,10 +7,20 @@
 [![Protocol](https://img.shields.io/badge/Protocol-MCP%202024--11--05-purple?style=for-the-badge)](https://modelcontextprotocol.io)
 [![License](https://img.shields.io/badge/License-Apache%202.0%20%7C%20MIT-blue?style=for-the-badge)](LICENSE)
 
+<br/>
+
 **120 validated mental models packaged as an MCP server to upgrade reasoning, prompt engineering, and architectural decisions in Claude Desktop, Cursor, and Windsurf.**
 
-[Quickstart](#quickstart) • [Claude Desktop Setup](#claude-desktop-setup) • [The 6 Domains](#the-6-reasoning-domains) • [Engineering Verification](#engineering-rigor--verification)
+[Quickstart](#quickstart) • [The 6 Domains](#the-6-reasoning-domains) • [Claude Desktop Setup](#claude-desktop-setup) • [Engineering Verification](#engineering-rigor--verification)
 
+</div>
+
+---
+
+## The 6 Reasoning Domains
+
+<div align="center">
+  <img src="assets/base120-taxonomy.svg" alt="Base120 6 Cognitive Domains" width="100%"/>
 </div>
 
 ---
@@ -40,23 +50,6 @@ Add `base120-mcp` directly to your `claude_desktop_config.json`:
 
 Now you can ask Claude in natural language:
 > *"Use Base120 Inversion and Ashby's Law to critique our new distributed task queue architecture."*
-
----
-
-## The 6 Reasoning Domains
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    BASE120 MENTAL DOMAINS                   │
-├─────────────────────────────────────────────────────────────┤
-│  1. Perspective: Inversion, First Principles, Occam's Razor │
-│  2. Composition: Synergy, Antifragility, Network Effects    │
-│  3. Decomposition: Root Cause (5-Whys), MECE, Bottlenecks   │
-│  4. Recursion: Compounding, Feedback Loops, Flywheels       │
-│  5. Systems: Ashby's Law, Le Chatelier, Cybernetics         │
-│  6. Games: Nash Equilibrium, Principal-Agent Alignment      │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ---
 
